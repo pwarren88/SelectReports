@@ -1,0 +1,21 @@
+﻿@model SelectReports.Models.PageModel
+@{
+    ViewBag.Title = "Product";
+}
+
+<h2>Product</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.DropDownListFor(m => m.SelectedState, Model.States.Select(x => new SelectListItem)
+}
+
+
+<p>@Model</p>
+
+@foreach (var item in Model.TopProducts)
+{
+    <p>@item.id</p>
+    <p>@item.quantity</p>
+    <p>@item.totalSales</p>
+}
